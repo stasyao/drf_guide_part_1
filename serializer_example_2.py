@@ -35,5 +35,6 @@ class CapitalSerializer(serializers.Serializer):
 serializer_obj = CapitalSerializer(instance=queryset, many=True)
 
 # Рендерим данные в json
-data_in_json = renderers.JSONRenderer().render(serializer_obj.data)
+json_render_for_our_data = renderers.JSONRenderer()
+data_in_json = json_render_for_our_data.render(serializer_obj.data)
 print(data_in_json)

@@ -1,3 +1,5 @@
+from django.shortcuts import render
+
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -9,10 +11,22 @@ class GetCapitalInfoView(APIView):
     def get(self, request):
         # извлекаем набор всех записей из таблицы Capital
         queryset = Capital.objects.all()
-        print(Capital.objects.first().__dict__)
         # создаём сериалайзер для извлечённого наборa записей
         serializer_for_queryset = CapitalSerializer(
-            instance=queryset, # передаём набор записей
-            many=True # указываем, что на вход подается именно набор, а не одна запись
+            instance=queryset,  # передаём набор записей
+            many=True  # указываем, что на вход подается именно набор, а не одна запись
         )
         return Response(serializer_for_queryset.data)
+
+
+def main_page(request):
+    """
+    Контроллер для отображения на главной странице списка всех записей. 
+    """
+    list_of_capitals = Capital.objects.all()
+    context = {'list_of_capitals': list_of_capitals}
+    return render(
+        request=request,
+        template_name='capitals/main.html',
+        context=context
+    )

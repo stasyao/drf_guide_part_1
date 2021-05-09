@@ -6,5 +6,5 @@ class Capital(models.Model):
     capital_city = models.CharField('capital', max_length=150)
     capital_population = models.IntegerField('population')
 
-    def str(self):
+    def __str__(self):
         return self.capital_city
