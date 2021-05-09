@@ -7,5 +7,7 @@
 3. Устанавливаем виртуальное окружение `python -m venv env`
 4. Запускаем виртуальное окружение `source env/Scripts/activate`
 5. Устанавливаем в виртуальном окружении зависимости для проекта `pip install -r requirements.txt`
-6. Запускаем локальный сервер `python manage.py runserver`
-7. По адресу `http://localhost:8000` будет доступен список записей о столицах, a по адресу `http://localhost:8000/api/capitals` та же информация через API.
+6. Делаем миграции для создания базы данных `python manage.py migrate`
+7. Заполняем данными таблицу Capital `python manage.py loaddata db.json`
+8. Запускаем локальный сервер `python manage.py runserver`
+9. По адресу `http://localhost:8000` будет доступен список записей о столицах, a по адресу `http://localhost:8000/api/capitals` та же информация через API.
