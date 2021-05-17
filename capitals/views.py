@@ -14,7 +14,7 @@ class GetCapitalInfoView(APIView):
         # создаём сериалайзер для извлечённого наборa записей
         serializer_for_queryset = CapitalSerializer(
             instance=queryset,  # передаём набор записей
-            many=True  # указываем, что на вход подается именно набор, а не одна запись
+            many=True  # на вход подается именно набор, а не одна запись
         )
         return Response(serializer_for_queryset.data)
 

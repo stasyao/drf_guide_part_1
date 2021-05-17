@@ -1,4 +1,6 @@
 env/
 *.sqlite3
 capitals.txt
-migrations/
+/*/migrations/*
+__pycache__
+!__init__.py
