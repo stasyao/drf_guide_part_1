@@ -1,10 +1,10 @@
 import requests
 
-url = 'http://localhost:8000/api/capitals/' # полный адрес эндпоинта
-response = requests.get(url) # делаем GET-запрос
-# поскольку данные пришли в формате json, переведем их в python
+url = 'http://localhost:8000/api/capitals/'  # Полный адрес эндпоинта
+response = requests.get(url)  # Делаем GET-запрос
+# Поскольку данные пришли в формате json, переведем их в python
 response_in_python = response.json()
-# запишем полученные данные в файл capitals.txt
+# Запишем полученные данные в файл capitals.txt
 with open('capitals.txt', 'w') as file:
     for capital in response_in_python:
         file.write(

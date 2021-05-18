@@ -9,19 +9,19 @@ from .serializers import CapitalSerializer
 
 class GetCapitalInfoView(APIView):
     def get(self, request):
-        # извлекаем набор всех записей из таблицы Capital
+        # Извлекаем набор всех записей из таблицы Capital
         queryset = Capital.objects.all()
-        # создаём сериалайзер для извлечённого наборa записей
+        # Создаём сериалайзер для извлечённого наборa записей
         serializer_for_queryset = CapitalSerializer(
-            instance=queryset,  # передаём набор записей
-            many=True  # на вход подается именно набор, а не одна запись
+            instance=queryset,  # Передаём набор записей
+            many=True  # На вход подается именно набор, а не одна запись
         )
         return Response(serializer_for_queryset.data)
 
 
 def main_page(request):
     """
-    Контроллер для отображения на главной странице списка всех записей. 
+    Контроллер для отображения на главной странице списка всех записей.
     """
     list_of_capitals = Capital.objects.all()
     context = {'list_of_capitals': list_of_capitals}
