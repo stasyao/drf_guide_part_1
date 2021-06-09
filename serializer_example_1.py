@@ -32,8 +32,8 @@ queryset = [capital_1, capital_2, capital_3, capital_4]
 class CapitalSerializer(serializers.Serializer):
     capital_city = serializers.CharField(max_length=200)
     capital_population = serializers.IntegerField()
-    author_username = serializers.CharField(source='author.username',
-                                            max_length=200)
+    author = serializers.CharField(source='author.username',
+                                   max_length=200)
 
 # instance - набор записей, many=True - сериализовать нужно
 # именно несколько записей, а не одну
