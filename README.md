@@ -9,6 +9,6 @@
 5. Обновляем pip `python -m pip install --upgrade pip`
 6. Устанавливаем в виртуальном окружении зависимости для проекта `python -m pip install --no-cache-dir -r requirements.txt`
 7. Делаем миграции для создания базы данных `python manage.py makemigrations && python manage.py migrate`
-8. Заполняем данными таблицу Capital и таблицу auth.user `python manage.py loaddata db.json`
+8. Заполняем данными модели `Capital` и `auth.user` &mdash; `python manage.py loaddata db.json`
 9. Запускаем локальный сервер `python manage.py runserver`
 10. По адресу `http://localhost:8000` будет доступен список записей о столицах, a по адресу `http://localhost:8000/api/capitals` та же информация через API.
