@@ -1,5 +1,9 @@
 # Учебный проект для пособия по Django Rest Framework
 
+Статьи на Хабре:
++ [Django Rest Framework для начинающих: создаём API для чтения данных (часть 1)](https://habr.com/ru/company/yandex_praktikum/blog/561696/)
++ [Django Rest Framework для начинающих: создаём API для чтения данных (часть 2)](https://habr.com/ru/company/yandex_praktikum/blog/562050/)
+
 Запускаем проект на своей машине: 
 
 1. Клонируем репозиторий `git clone https://github.com/stasyao/drf_guide_part_1`
